@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
-    "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
+    "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback",
+    "build": "sucrase ./src -d  ./dist --transforms typescript,imports",
+    "start": "node ./dist/src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +25,7 @@
     "express": "^4.17.1",
     "knex": "^0.21.2",
     "mysql": "^2.18.1",
-    "sqlite3": "^5.0.0"
+    "sqlite3": "^5.0.0",
+    "sucrase": "^3.16.0"
   }
 }
