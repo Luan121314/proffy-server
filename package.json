@@ -7,7 +7,7 @@
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
     "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback",
-    "build": "sucrase ./src -d  ./dist --transforms typescript,imports",
+    "build": "sucrase ./src -d  ./dist/src --transforms typescript,imports",
     "start": "node ./dist/src/server.js"
   },
   "keywords": [],
